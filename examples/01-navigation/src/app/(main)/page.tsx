@@ -1,5 +1,9 @@
 
 
 export default function Home() {
-  return <p> Hello Raymond.</p>
+  return (
+    <main>
+      <p>Hello Raymond</p>
+    </main>
+  )
 }
