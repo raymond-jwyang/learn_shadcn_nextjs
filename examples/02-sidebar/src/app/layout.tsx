@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "01-navigation",
-  description: "Exercise ShadCN navigation component",
+  title: "02-sidebar",
+  description: "Exercise ShadCN Sidebar component",
 };
 
 export default function RootLayout({
