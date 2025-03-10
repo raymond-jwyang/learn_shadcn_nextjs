@@ -1,6 +1,20 @@
 import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupAction, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "@/components/ui/sidebar";
-import { ChevronDown, ChevronUp, Home, Inbox, Plus, Search, User2 } from "lucide-react";
+import { ChevronDown, ChevronUp, Globe, Home, Inbox, Plus, Search, Send, User2 } from "lucide-react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
+
+const helpItems = [
+    {
+        title: "Support",
+        url: "#",
+        icon: Globe,
+    },
+    {
+        title: "Feedback",
+        url: "#",
+        icon: Send,
+    },
+];
 
 const projectItems = [
     {
@@ -56,6 +70,32 @@ export default function AppSidebar() {
                     </SidebarGroupAction>
                     <SidebarGroupContent></SidebarGroupContent>
                 </SidebarGroup>
+
+                <Collapsible defaultOpen className="group/collapsible">
+                    <SidebarGroup>
+                        <SidebarGroupLabel asChild>
+                            <CollapsibleTrigger>
+                            Help
+                            <ChevronDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
+                            </CollapsibleTrigger>
+                        </SidebarGroupLabel>
+                        <CollapsibleContent>
+                        <SidebarGroupContent>
+                            <SidebarMenu>
+                                {helpItems.map((item) => (
+                                    <SidebarMenuItem key={item.title}>
+                                        <SidebarMenuButton asChild>
+                                            <a href={item.url}>
+                                            <item.icon /><span>{item.title}</span>
+                                            </a>
+                                        </SidebarMenuButton>
+                                    </SidebarMenuItem>
+                                ))}
+                            </SidebarMenu>
+                        </SidebarGroupContent>
+                        </CollapsibleContent>
+                    </SidebarGroup>
+                </Collapsible>
 
                 <SidebarGroup>
                     <SidebarGroupLabel>Projects</SidebarGroupLabel>
