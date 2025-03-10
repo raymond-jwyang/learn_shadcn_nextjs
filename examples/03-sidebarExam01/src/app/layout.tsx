@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "02-sidebar",
+  title: "03-sidebar",
   description: "Exercise ShadCN Sidebar component",
 };
 
