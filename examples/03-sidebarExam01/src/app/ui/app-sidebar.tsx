@@ -22,7 +22,7 @@ const projectItems = [
 
 export default function AppSidebar() {
     return (
-        <Sidebar>
+        <Sidebar side="left" variant="floating" collapsible="icon">
 
             <SidebarHeader>
             </SidebarHeader>

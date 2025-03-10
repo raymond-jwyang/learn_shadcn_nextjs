@@ -1,4 +1,4 @@
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import React from "react";
 import AppSidebar from "../ui/app-sidebar";
 import { cookies } from "next/headers";
@@ -18,10 +18,12 @@ export default async function MainLayout({
         <SidebarProvider defaultOpen={defaultOpen}>
             <AppSidebar />
 
+            {/* <SidebarInset> */}
             <main>
                 <SidebarTrigger />
                 {children}
             </main>
+            {/* </SidebarInset> */}
             
         </SidebarProvider>
         </>
